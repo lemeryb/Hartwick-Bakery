@@ -10,6 +10,7 @@ from multiprocessing import Process
 def cookie_sales():
     cookies = []
     months = 6
+    # Runs through a loop and appends inputted data into a list
     for i in range(0, months):
         cookies.append(int(input("Enter the cookie sales in a given month.")))
     return(cookies)
@@ -19,6 +20,7 @@ def cookie_sales():
 def candy_sales():
     candy = []
     months = 6
+    # Runs through a loop and appends inputted data into a list
     for i in range(0, months):
         candy.append(int(input("Enter the candy sales in any given month.")))
     return(candy)
@@ -26,6 +28,7 @@ def candy_sales():
 # Determines the total number of candy sales
 def monthly_average_candy_sales(candy):
     total = 0
+    # Runs through a loop based on how large the candy list is, averages out the candy list and invokes the next candy functions
     for i in range(0, len(candy)):
         total = total + candy[i]
         average = round(total / len(candy))
@@ -37,6 +40,7 @@ def monthly_average_candy_sales(candy):
 # Determines the total number of candy sales
 def monthly_average_cookie_sales(cookies):
     total = 0
+    # Runs through a loop based on how large the cookie list is, averages out the cookie list and invokes the next cookie functions
     for i in range(0, len(cookies)):
         total = total + cookies[i]
         average = round(total / len(cookies))
@@ -45,8 +49,10 @@ def monthly_average_cookie_sales(cookies):
     minimum_cookie_sales(cookies)
 
 
+# Prints the highest and lowest number of cookies and candies sold in any given month.
 def maximum_cookie_sales(cookies):
     max_cookies = print("The highest number of cookies sold in any given month was " + str(max(cookies)))
+
 
 def minimum_cookie_sales(cookies):
     min_cookies = print("The lowest number of cookies sold in any given month was " + str(min(cookies)))
@@ -59,6 +65,8 @@ def maximum_candy_sales(candy):
 def minimum_candy_sales(candy):
     min_candy = print("The lowest number of pieces of candy sold in any given month was " + str(min(candy)))
 
+
+# Determines which candy is more popular based on the total sum of each list
 def popular_opinion(cookie_total,candy_total):
     print('\nThe total number of cookies sold equates to: ' +  str(cookie_total))
     print('The total number of pieces of candy sold equates to ' + str(candy_total))
@@ -71,6 +79,7 @@ def popular_opinion(cookie_total,candy_total):
         print("Cookies are the more popular item.")
 
 
+# Manages certain elements of the programs flow control
 def __init__():
     # Grabs the data set from both functions.
     cookie_values = cookie_sales()
